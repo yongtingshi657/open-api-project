@@ -6,11 +6,16 @@ body {
 }
 
 /* nav */
+nav {
+  position: fixed;
+  width: 100%;
+  top:0;
+  z-index: 1000;
+}
 nav ul {
   background-color: rgb(225, 205, 100);
   padding: 1rem;
   margin: auto;
-  top: 0;
   list-style-type: none;
   max-width: 100%;
   display: flex;
@@ -44,7 +49,7 @@ nav a:focus{
 
 /* main */
 main {
-  padding-top: 0.5rem;
+  padding-top: 5rem;
   width: 90%;
   margin: auto;
   text-align: center;
@@ -115,7 +120,11 @@ img {
   /* background-color: red; */
 }
 
-/* ipad size */
+ #coffee-detail a {
+  text-decoration: underline;
+}
+
+/* tablet size */
 @media screen and (min-width: 768px)and (max-width: 1024px){
 .random-coffee-image {
   max-height: 400px;
@@ -136,14 +145,13 @@ img {
     justify-content: space-around;
     align-items: flex-start;
     gap:2rem;
+    width:90%;
+    margin: auto;
   }   
-  .random-coffee-image {
-    flex: 1;
-  }
 
   .random-coffee-image{
     margin-left: 2rem;
-    width: 80%;
+    max-width: 70%;
     height: auto;
     margin-right: 0;
   }
@@ -162,7 +170,7 @@ img {
 
 }
 
-/* =====================Learn more page ============================*/
+/* =====================Hot coffee page ============================*/
 
 /* ----------phone view---------- */
 .coffee-card {
@@ -225,3 +233,48 @@ img {
   transform: rotateY(180deg);
 }
 
+
+/* TABLET view */
+@media screen and (min-width: 768px)and (max-width: 1024px){
+ #coffee-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+   .coffee-card {
+    flex: 0 1 calc(50% - 2rem);
+    max-width: 45%;
+    margin-bottom: 10px;
+   }
+
+
+}
+/* desktopview */ 
+@media screen and (min-width: 1025px) {
+  #coffee-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+   .coffee-card {
+    flex: 0 1 calc(50% - 2rem);
+    max-width: 45%;
+   }
+}
+
+
+
+/* cold cofee page */
+.cold-coffee-heading{
+  font-size: 3rem;
+}
+
+@media screen and (min-width: 768px) {
+  .cold-coffee-heading{
+  font-size: 4rem;
+}
+}

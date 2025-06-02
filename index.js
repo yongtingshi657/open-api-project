@@ -30,14 +30,21 @@ function showRandomCoffee(){
     console.log("Random coffee chosen:", randomCoffee);
 
   
-  coffeeImage.src = randomCoffee.image;
+  // coffeeImage.src = randomCoffee.image;
+
+  if (!randomCoffee.image || String(randomCoffee.image).toLowerCase() === "null") {
+    coffeeImage.src = "img/coffee-img.jpg"; // Default image path
+    console.log("Default image used");
+  } else {
+    coffeeImage.src = randomCoffee.image;
+  }
   coffeeImage.alt = randomCoffee.title || "Coffee";
   coffeeName.textContent = randomCoffee.title || "Unknown Coffee";
   coffeeDes.textContent = randomCoffee.description || "No description available.";
 
   coffeeImage.classList.add("random-coffee-image");
   coffeeDetails.style.display = "block";
-   coffeeDetails.scrollIntoView({ behavior: "smooth" });
+  coffeeDetails.scrollIntoView({ behavior: "smooth" });
 
   }
 
